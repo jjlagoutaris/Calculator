@@ -15,14 +15,15 @@ body{
     flex-flow: column;
     justify-content: center;
     align-items: center;
+    font-family: 'Rock Salt', cursive;
 }
 #calculator{
     margin-top: auto;
-    border: 2px solid gray;
+    border: 2px solid black;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
-    background-color: #F9A826;
+    background-color:beige;
     width: 400px;
     height: 550px;
     justify-content: center;
@@ -54,6 +55,7 @@ body{
     height: 50px;
     width: 20%;
     border-radius: 5px;
+    font-family: 'Rock Salt', cursive;
 }
 #text-buttons{
     display: flex;
@@ -78,4 +80,34 @@ body{
     width: 100%;
     text-align: center;
     padding: 32px;
-} 
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+/* Button aesthetization customization */
+
+
+.clear,
+.delete{
+    font-size: 18px;
+    border: 3px solid black;
+}
+.clear{
+    background-color: #F5A9C4;
+}
+.delete{
+    background-color: yellowgreen;
+}
+#number-buttons .btn{
+    background-color: #A0FFF0;
+}
+#number-buttons .add, 
+#number-buttons .multiply,
+#number-buttons .divide,
+#number-buttons .subtract{
+    background-color: #F50057;
+    border: 3px solid black;
+}
+#number-buttons .equals{
+    background-color: #6C63FF;
+    border: 3px solid black;
+}
