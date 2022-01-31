@@ -1,0 +1,81 @@
+html{
+    box-sizing: border-box;
+}
+*, *::before, *::after{
+    box-sizing: inherit;
+}
+body{
+    height: 100vh;
+    background-color: whitesmoke;
+    font-size: 24px;
+    padding: 0;
+    margin: 0;
+    color: black;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+#calculator{
+    margin-top: auto;
+    border: 2px solid gray;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    background-color: #F9A826;
+    width: 400px;
+    height: 550px;
+    justify-content: center;
+    align-items: center;
+}
+#calculator-screen{
+    font-size: 32px;
+    margin-top: -50px;
+    margin-bottom: 20px;
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 90%;
+    text-align: center;
+    height: 100px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 20px;
+}
+#calculator-buttons{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: space-around;
+    width: 90%;
+}
+.btn{
+    height: 50px;
+    width: 20%;
+    border-radius: 5px;
+}
+#text-buttons{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+#text-buttons .btn{
+    margin: 0 auto;
+    width: 50%;
+}
+#number-buttons{
+    display: flex;
+    flex-flow: row wrap;
+    justify-items: center;
+    align-items: center;
+    gap: 23.5px;
+    margin-bottom: -40px;
+}
+.footer{
+    margin-top: auto;
+    background-color: #aaa;
+    width: 100%;
+    text-align: center;
+    padding: 32px;
+} 
