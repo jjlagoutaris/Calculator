@@ -1,3 +1,5 @@
+const screen = document.querySelector('#calculator-screen'); 
+
 function add(a, b){
     return a + b;
 };
@@ -29,4 +31,36 @@ function operate(operator, a, b){
     }
 }
 
-console.log(operate('+', 5, 4));
+function addBtnListeners(){
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach(function(e){
+        e.addEventListener('click', () => {
+            switch(e.textContent){
+                default:
+                    screen.textContent = "ERROR";
+                    break;
+                case "0":
+                case "1":
+                case "2":
+                case "3":
+                case "4":
+                case "5":
+                case "6":
+                case "7":
+                case "8":
+                case "9":
+                case ".":
+                    screen.textContent += e.textContent;
+                    break;
+                case "CLEAR":
+                    screen.textContent = "";
+                    break;
+                case "DELETE":
+                    screen.textContent = screen.textContent.slice(0,-1);
+                    break;       
+            }
+        });
+    });
+}
+
+addBtnListeners();
