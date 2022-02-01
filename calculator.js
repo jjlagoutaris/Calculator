@@ -1,6 +1,8 @@
 const screen = document.querySelector('#calculator-screen');
 let calculatorCache = [0];
 let operator;
+let dotCount = 0;
+// let operationCount = 0;
 
 function add(a, b){
     return a + b;
@@ -38,6 +40,12 @@ function operate(operator, a, b){
     }
 }
 
+function performOperation(){
+    screen.textContent = +operate(operator, 
+        calculatorCache[calculatorCache.length-1], 
+        +screen.textContent).toFixed(5);
+}
+
 function addBtnListeners(){
     const buttons = document.querySelectorAll('.btn');
     buttons.forEach(function(e){
@@ -56,8 +64,13 @@ function addBtnListeners(){
                 case "7":
                 case "8":
                 case "9":
-                case ".":
                     screen.textContent += e.textContent;
+                    break;
+                case ".":
+                    if (dotCount === 0){
+                        screen.textContent += e.textContent;
+                    }
+                    dotCount++;
                     break;
                 case "CLEAR":
                     screen.textContent = "";
@@ -88,14 +101,12 @@ function addBtnListeners(){
                     break;
                 case "=":
                     if (operator === '+' || operator === '-' || operator === '*' || operator === '/'){
-                        screen.textContent = +operate(operator, 
-                            calculatorCache[calculatorCache.length-1], 
-                            +screen.textContent).toFixed(5);
-                        operator = '';
+                        performOperation();
                     }
                     else{
                         screen.textContent = "Error, invalid operation";
                     }
+                    operator = '';
                     break;
             }
         });
